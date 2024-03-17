@@ -1,9 +1,11 @@
+import "dotenv/config";
 import "express-async-errors";
 import "src/db";
 import express from "express";
 import authRouter from "routes/auth";
 
 const app = express();
+app.use(express.static("src/public"));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
